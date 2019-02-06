@@ -8,15 +8,16 @@ import {PartyAffiliationComponent} from './party-affiliation/party-affiliation.c
 import {CivicEngagementComponent} from './civic-engagement/civic-engagement.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(PoliticalRoutes),
-    FormsModule
+    FormsModule,
   ],
   declarations: [
     PartyAffiliationComponent,
-    CivicEngagementComponent
+    CivicEngagementComponent,
   ]
 })
 

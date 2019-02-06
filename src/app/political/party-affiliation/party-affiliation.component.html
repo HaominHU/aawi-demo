@@ -1,7 +1,132 @@
-<div class="main-content buttons-with-margin">
-  <div class="card">
-    <div class="row">
-      abcd
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="card-title">Ethic Group:</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <span *ngFor="let choice of choices" >
+                    <input type="checkbox" [(ngModel)]="choice.isChecked" (ngModelChange)="update()"> {{choice.race}} &nbsp;
+                  </span>
+
+                  <!--<select class="selectpicker" data-style="btn btn-info btn-round" multiple title="Choose Races" data-size="7" [(ngModel)]="choice" (ngModelChange)="update()">-->
+                    <!--<option disabled> Multiple Options</option>-->
+                    <!--<option value="Asian American">Asian American</option>-->
+                    <!--<option value="Chinese">Chinese</option>-->
+                    <!--<option value="Filipino">Filipino</option>-->
+                    <!--<option value="Indian">Indian</option>-->
+                    <!--<option value="Japanese">Japanese</option>-->
+                    <!--<option value="Korean">Korean</option>-->
+                    <!--<option value="US">US</option>-->
+                    <!--<option value="Vietnamese">Vietnamese</option>-->
+                  <!--</select>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[0]">
+        <div class="card-header">
+          <h5 class="card-title">Asian American</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie1" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie1></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[1]">
+        <div class="card-header">
+          <h5 class="card-title">Chinese</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie2" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie2></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4" >
+      <div class="card" [hidden]="toHidden[2]">
+        <div class="card-header">
+          <h5 class="card-title">Filipino</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie3" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie3></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[3]">
+        <div class="card-header">
+          <h5 class="card-title">Indian</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie4" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie4></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[4]">
+        <div class="card-header">
+          <h5 class="card-title">Japanese</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie5" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie5></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[5]">
+        <div class="card-header">
+          <h5 class="card-title">Korean</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie6" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie6></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[6]">
+        <div class="card-header">
+          <h5 class="card-title">U.S.</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie7" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie7></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[7]">
+        <div class="card-header">
+          <h5 class="card-title">Vietnamese</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <canvas id="pie8" class="ct-chart ct-perfect-fourth" width="456" height="300" #pie8></canvas>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -1,3 +1,62 @@
-<p>
-  civic-engagement works!
-</p>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="card-title">Ethic Group:</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <span *ngFor="let choice of choices" >
+                    <input type="checkbox" [(ngModel)]="choice.isChecked" (ngModelChange)="update()"> {{choice.race}} &nbsp;
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title">% of US citizens voted in 2018 presidential election</h5>
+          <p class="card-category">Source year: {{year}}</p>
+        </div>
+        <div class="card-body ">
+          <canvas id='voted' width="400" height="100" #voted></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title">% of U.S. citizens who are registered to vote</h5>
+          <p class="card-category">Source year: {{year}}</p>
+        </div>
+        <div class="card-body ">
+          <canvas id='registerToVote' width="400" height="100" #registerToVote></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card ">
+        <div class="card-header ">
+          <h5 class="card-title">% saying they have worked with other people from neighbourhood to fix a problem or improve a condition in their community in the past year'</h5>
+          <p class="card-category">Source year: {{year}}</p>
+        </div>
+        <div class="card-body ">
+          <canvas id='workWithOhter' width="400" height="100" #workWithOther></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
