@@ -24,7 +24,7 @@ export class CivicEngagementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.choices = this.datasource.data.map(
+    this.choices = this.datasource.political.map(
       record => {
         return {
           race: record.race,
@@ -86,7 +86,7 @@ export class CivicEngagementComponent implements OnInit {
 
     var values = data.map(
       race => {
-        return race.qestions[question];
+        return race.civicEngagement[question];
       }
     );
 
@@ -223,16 +223,14 @@ export class CivicEngagementComponent implements OnInit {
   }
 
   update() {
-    console.log("updated");
     this.chartData = [];
     this.choices.forEach(
       choice => {
         if(choice.isChecked) {
-          this.chartData.push(_.find(this.datasource.data, {race: choice.race}));
+          this.chartData.push(_.find(this.datasource.political, {race: choice.race}));
         }
       }
     );
-    console.log('chartData', this.chartData);
     this._createChart();
   }
 

@@ -16,7 +16,11 @@ export const AppRoutes: Routes = [{
         }, {
             path: 'political',
             loadChildren: './political/political.module#PoliticalModule'
-        },{
+        }, {
+          path: 'culture',
+          loadChildren: './culture/culture.module#CultureModule'
+        },
+          {
             path: 'components',
             loadChildren: './components/components.module#ComponentsModule'
         },{

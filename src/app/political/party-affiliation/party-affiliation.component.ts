@@ -30,7 +30,7 @@ export class PartyAffiliationComponent implements OnInit {
 
   ngOnInit() {
 
-    this.choices = this.datasource.data.map(
+    this.choices = this.datasource.political.map(
       record => {
         return {
           race: record.race,
@@ -51,7 +51,7 @@ export class PartyAffiliationComponent implements OnInit {
 
   _createChart() {
     //Asian American
-    var aa = _.find(this.datasource.data, {race: 'Asian American'});
+    var aa = _.find(this.datasource.political, {race: 'Asian American'});
     var aaConfig = this._getConfig(aa.partyAffilication);
 
     var canvas1 = this.pie1.nativeElement;
@@ -59,49 +59,49 @@ export class PartyAffiliationComponent implements OnInit {
     var chart1 = new Chart(ctx1, aaConfig);
 
     //Chinese
-    var chinese = _.find(this.datasource.data, {race: 'Chinese'});
+    var chinese = _.find(this.datasource.political, {race: 'Chinese'});
     var chineseConfig = this._getConfig(chinese.partyAffilication);
     var canvas2 = this.pie2.nativeElement;
     let ctx2 = canvas2.getContext('2d');
     var chart2 = new Chart(ctx2, chineseConfig);
 
     //Filipino
-    var flpn = _.find(this.datasource.data, {race: 'Filipino'});
+    var flpn = _.find(this.datasource.political, {race: 'Filipino'});
     var flpnConfig = this._getConfig(flpn.partyAffilication);
     var canvas3 = this.pie3.nativeElement;
     let ctx3 = canvas3.getContext('2d');
     var chart3 = new Chart(ctx3, flpnConfig);
 
     //Indian
-    var idn = _.find(this.datasource.data, {race: 'Indian'});
+    var idn = _.find(this.datasource.political, {race: 'Indian'});
     var idnConfig = this._getConfig(idn.partyAffilication);
     var canvas4 = this.pie4.nativeElement;
     let ctx4 = canvas4.getContext('2d');
     var chart4 = new Chart(ctx4, idnConfig);
 
     //Japanese
-    var jpn = _.find(this.datasource.data, {race: 'Japanese'});
+    var jpn = _.find(this.datasource.political, {race: 'Japanese'});
     var jpnConfig = this._getConfig(jpn.partyAffilication);
     var canvas5 = this.pie5.nativeElement;
     let ctx5 = canvas5.getContext('2d');
     var chart5 = new Chart(ctx5, jpnConfig);
 
     //Korean
-    var krn = _.find(this.datasource.data, {race: 'Korean'});
+    var krn = _.find(this.datasource.political, {race: 'Korean'});
     var krnConfig = this._getConfig(krn.partyAffilication);
     var canvas6 = this.pie6.nativeElement;
     let ctx6 = canvas6.getContext('2d');
     var chart6 = new Chart(ctx6, krnConfig);
 
     //U.S.
-    var us = _.find(this.datasource.data, {race: 'US'});
+    var us = _.find(this.datasource.political, {race: 'US'});
     var usConfig = this._getConfig(us.partyAffilication);
     var canvas7 = this.pie7.nativeElement;
     let ctx7 = canvas7.getContext('2d');
     var chart7 = new Chart(ctx7, usConfig);
 
     //Korean
-    var vtm = _.find(this.datasource.data, {race: 'Vietnamese'});
+    var vtm = _.find(this.datasource.political, {race: 'Vietnamese'});
     var vtmConfig = this._getConfig(vtm.partyAffilication);
     var canvas8 = this.pie8.nativeElement;
     let ctx8 = canvas8.getContext('2d');
@@ -188,7 +188,6 @@ export class PartyAffiliationComponent implements OnInit {
   }
 
   update() {
-    console.log('choice', this.choices);
     this.toHidden = this.choices.map(
       choice => {
         return !choice.isChecked;

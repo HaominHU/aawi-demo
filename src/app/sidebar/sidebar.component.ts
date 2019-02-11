@@ -25,10 +25,21 @@ export const ROUTES: RouteInfo[] = [{
         icontype: 'nc-icon nc-bank'
     },
     {
+      path: '/culture',
+      title: 'CultureWB',
+      type: 'sub',
+      icontype: 'nc-icon nc-bank',
+      children: [
+        {path: 'religious', title: 'Religious Affiliation', ab: 'RA'},
+        {path: 'cultureidentity', title:'Culture Identity', ab:'CI'},
+        {path: 'corevalues', title: 'Core Values', ab: 'CV'}
+      ]
+    },
+    {
       path: '/political',
       title: 'PoliticalWB',
       type: 'sub',
-      icontype: 'nc-icon nc-layout-11',
+      icontype: 'nc-icon nc-bank',
       children: [
         {path: 'party', title: 'Party Affiliation', ab: 'PA'},
         {path: 'civic', title: 'Civic Engagement', ab: 'CE'}
