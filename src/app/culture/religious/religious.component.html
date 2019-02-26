@@ -1,3 +1,117 @@
-<p>
-  religious works!
-</p>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <h4 class="card-title">Ethic Group</h4>
+              <div class="row">
+                <div class="col-md-12">
+                  <span *ngFor="let choice of choices">
+                    <input type="checkbox" [(ngModel)]="choice.isChecked" (ngModelChange)="update()">{{choice.race}} &nbsp;
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[0]">
+        <div class="card-header">
+          <h5 class="card-title">Asian American</h5>
+          <p class="card-category">Source Year: {{year}}</p>
+        </div>
+        <div class="card-body">
+          <app-piechart [data]="aa" [width]="456" [height]="650" [colorNo]="aal"></app-piechart>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[1]">
+          <div class="card-header">
+              <h5 class="card-title">Chinese</h5>
+              <p class="card-category">Source Year: {{year}} </p>
+          </div>
+          <div class="card-body">
+            <app-piechart [data]="chinese" [width]="456" [height]="650" [colorNo]="chinesel"></app-piechart>
+          </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[2]">
+        <div class="card-header">
+          <h5 class="card-title">Filipino</h5>
+          <p class="card-category">Source Year:{{year}}</p>
+        </div>
+        <div class="card-body">
+          <app-piechart [data]="flpn" [width]="456" [height]="650" [colorNo]="flpnl"></app-piechart>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card" [hidden]="toHidden[3]">
+        <div class="card-header">
+          <h5 class="card-title">Indian</h5>
+          <div class="card-category">Source Year: {{year}}</div>
+        </div>
+        <div class="card-body">
+          <app-piechart [data]="idn" [width]="456" [height]="650" [colorNo]="idnl"></app-piechart>  
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" [hidden]="toHidden[4]">
+          <div class="card-header">
+            <h5 class="card-title">Japanese</h5>
+            <div class="card-category">Source Year: {{year}}</div>
+          </div>
+          <div class="card-body">
+            <app-piechart [data]="jpn" [width]="456" [height]="650" [colorNo]="jpnl"></app-piechart>  
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" [hidden]="toHidden[5]">
+          <div class="card-header">
+            <h5 class="card-title">Korean</h5>
+            <div class="card-category">Source Year: {{year}}</div>
+          </div>
+          <div class="card-body">
+            <app-piechart [data]="krn" [width]="456" [height]="650" [colorNo]="krnl"></app-piechart>  
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+      <div class="col-md-4">
+          <div class="card" [hidden]="toHidden[6]">
+            <div class="card-header">
+              <h5 class="card-title">U.S.</h5>
+              <div class="card-category">Source Year: {{year}}</div>
+            </div>
+            <div class="card-body">
+              <app-piechart [data]="us" [width]="456" [height]="650" [colorNo]="usl"></app-piechart>  
+            </div>
+          </div>
+      </div>
+      <div class="col-md-4">
+          <div class="card" [hidden]="toHidden[7]">
+            <div class="card-header">
+              <h5 class="card-title">Vietnamese</h5>
+              <div class="card-category">Source Year: {{year}}</div>
+            </div>
+            <div class="card-body">
+              <app-piechart [data]="vtm" [width]="456" [height]="650" [colorNo]="vtml"></app-piechart>  
+            </div>
+          </div>
+      </div>
+  </div>
+</div>

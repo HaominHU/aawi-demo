@@ -100,7 +100,7 @@ export class PartyAffiliationComponent implements OnInit {
     let ctx7 = canvas7.getContext('2d');
     var chart7 = new Chart(ctx7, usConfig);
 
-    //Korean
+    //Vietnamese
     var vtm = _.find(this.datasource.political, {race: 'Vietnamese'});
     var vtmConfig = this._getConfig(vtm.partyAffilication);
     var canvas8 = this.pie8.nativeElement;
