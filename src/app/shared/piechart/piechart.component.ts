@@ -1,4 +1,4 @@
-import {Component, ElementRef, Input, OnInit, ViewChild} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, ViewChild, OnChanges} from '@angular/core';
 import Chart from 'chart.js';
 
 @Component({
@@ -17,6 +17,10 @@ export class PiechartComponent implements OnInit {
 
   ngOnInit() {
     this._createChart();
+  }
+
+  ngOnChanges() {
+    console.log('changes');
   }
 
   _createChart() {

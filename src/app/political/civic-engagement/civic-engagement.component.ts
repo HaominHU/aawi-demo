@@ -24,15 +24,15 @@ export class CivicEngagementComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.choices = this.datasource.political.map(
-      record => {
-        return {
-          race: record.race,
-          isChecked: true
-        }
-      }
-    );
-    this.update();
+    // this.choices = this.datasource.political.map(
+    //   record => {
+    //     return {
+    //       race: record.race,
+    //       isChecked: true
+    //     }
+    //   }
+    // );
+    // this.update();
   }
 
 
@@ -216,15 +216,16 @@ export class CivicEngagementComponent implements OnInit {
     // var max = newArray[newArray.length - 1];
     // var second = newArray[newArray.length - 2];
 
+    // ?
     colors[0] = '#265481';
     colors[6] = '#3DB2B2';
 
     return colors;
   }
 
-  update() {
+  update(event) {
     this.chartData = [];
-    this.choices.forEach(
+    event.forEach(
       choice => {
         if(choice.isChecked) {
           this.chartData.push(_.find(this.datasource.political, {race: choice.race}));

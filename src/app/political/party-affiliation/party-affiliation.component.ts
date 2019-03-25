@@ -30,14 +30,14 @@ export class PartyAffiliationComponent implements OnInit {
 
   ngOnInit() {
 
-    this.choices = this.datasource.political.map(
-      record => {
-        return {
-          race: record.race,
-          isChecked: true
-        }
-      }
-    );
+    // this.choices = this.datasource.political.map(
+    //   record => {
+    //     return {
+    //       race: record.race,
+    //       isChecked: true
+    //     }
+    //   }
+    // );
 
     //  Init Bootstrap Select Picker
     // if ($(".selectpicker").length != 0) {
@@ -187,8 +187,8 @@ export class PartyAffiliationComponent implements OnInit {
     );
   }
 
-  update() {
-    this.toHidden = this.choices.map(
+  update(event) {
+    this.toHidden = event.map(
       choice => {
         return !choice.isChecked;
       }

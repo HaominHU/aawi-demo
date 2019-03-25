@@ -1,34 +1,25 @@
 <div class="main-content">
   <div class="row">
     <div class="col-md-12">
-      <div class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-md-12">
-              <h4 class="card-title">Ethic Group:</h4>
-              <div class="row">
-                <div class="col-md-12">
-                  <span *ngFor="let choice of choices" >
-                    <input type="checkbox" [(ngModel)]="choice.isChecked" (ngModelChange)="update()"> {{choice.race}} &nbsp;
-                  </span>
+      <app-ethic-selection [source]="'political'" (onUpdate)="update($event)"></app-ethic-selection>
+      <!--<div class="card">-->
+        <!--<div class="card-body">-->
+          <!--<div class="row">-->
+            <!--<div class="col-md-12">-->
+              <!--<h4 class="card-title">Ethic Group:</h4>-->
+              <!--<div class="row">-->
+                <!--<div class="col-md-12">-->
+                  <!--<span *ngFor="let choice of choices" >-->
+                    <!--<input type="checkbox" [(ngModel)]="choice.isChecked" (ngModelChange)="update()"> {{choice.race}} &nbsp;-->
+                  <!--</span>-->
 
-                  <!--<select class="selectpicker" data-style="btn btn-info btn-round" multiple title="Choose Races" data-size="7" [(ngModel)]="choice" (ngModelChange)="update()">-->
-                    <!--<option disabled> Multiple Options</option>-->
-                    <!--<option value="Asian American">Asian American</option>-->
-                    <!--<option value="Chinese">Chinese</option>-->
-                    <!--<option value="Filipino">Filipino</option>-->
-                    <!--<option value="Indian">Indian</option>-->
-                    <!--<option value="Japanese">Japanese</option>-->
-                    <!--<option value="Korean">Korean</option>-->
-                    <!--<option value="US">US</option>-->
-                    <!--<option value="Vietnamese">Vietnamese</option>-->
-                  <!--</select>-->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                <!--</div>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
     </div>
   </div>
 
